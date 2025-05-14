@@ -1,36 +1,70 @@
 
 ---
 
-## 🔍 Key Features (Detailed)
+# 🤖 Local RAG Chatbot with Ollama, LangChain & Chroma
 
-### ✅ Upload `.md` or `.pdf` Files  
-Just drag and drop them — no preprocessing needed. Both structured (`.md`) and unstructured (`.pdf`) formats are supported.
+This project is a fully local AI chatbot that lets you ask questions about your own `.md` and `.pdf` documents using a Retrieval-Augmented Generation (RAG) workflow — all running on your laptop.
 
-### ✅ Auto Re-index with `nomic-embed-text`  
-New files are split into chunks and embedded locally using Ollama. No cloud embeddings, no API keys.
-
-### ✅ Ask Natural Questions to `mistral`  
-The chatbot uses a local LLM (`mistral` or any other Ollama-supported model) to answer contextually grounded questions.
-
-### ✅ Multi-turn Chat with Memory  
-It remembers previous questions and builds on them using LangChain's session memory.
-
-### ✅ Source Highlighting for Every Answer  
-Each response includes the document name and a snippet for transparency.
-
-### ✅ All on CPU  
-Everything runs locally on CPU — perfect for offline setups or private environments.
+No cloud APIs. No GPUs. Just open-source tools and your CPU.
 
 ---
 
-## 🧠 How It Works — Step-by-Step
+## 🔍 Features
 
-1. **Upload documents** via Streamlit UI  
-2. **Split into chunks & embed** using `nomic-embed-text` (via Ollama)  
-3. **Store vectors** in local ChromaDB  
-4. **On user question**, retrieve relevant chunks  
-5. **Pass context into `mistral`** for answer generation  
-6. **Show answer + sources** in a clean, chat-style interface
+- 📄 Upload Markdown or PDF files
+- 🧠 Embed chunks locally with `nomic-embed-text` via Ollama
+- 🔍 Store and search vectors with ChromaDB
+- 💬 Ask natural questions using `mistral` or any local Ollama LLM
+- 🧵 Chat-style interface with multi-turn memory
+- ✅ Private, fast, and runs entirely offline
+
+---
+
+## 📦 Tech Stack
+
+| Tool       | Role                                  |
+|------------|----------------------------------------|
+| Ollama     | Local LLMs (e.g., mistral) + embeddings |
+| LangChain  | Prompt orchestration + memory          |
+| ChromaDB   | Local vector store                     |
+| Streamlit  | Chatbot UI                             |
+| Python     | Backend logic                          |
+
+---
+
+## 🧠 How It Works
+
+1. **Upload** `.md` or `.pdf` documents via the Streamlit UI  
+2. **Split** documents into chunks and embed them locally  
+3. **Store** embeddings in ChromaDB  
+4. **Ask** a question via chat  
+5. **Retrieve** similar chunks and pass them to an LLM  
+6. **Answer** is generated with context and shown with source snippets
+
+---
+
+## 🚀 Quickstart
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/local-rag-chatbot.git
+cd local-rag-chatbot
+
+# Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+
+# Install requirements
+pip install -r requirements.txt
+pip install "unstructured[pdf]" fpdf
+
+# Start Ollama model
+ollama run mistral
+
+# Launch the Streamlit chatbot UI
+streamlit run ui.py
+
+
 
 ---
 
