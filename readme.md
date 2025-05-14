@@ -43,7 +43,7 @@ No cloud APIs. No GPUs. Just open-source tools and your CPU.
 
 ---
 
-## 🚀 Quickstart
+## 🚀 Quickstart 💻 Local Setup Instructions
 
 ```bash
 # Clone the repo
@@ -77,19 +77,3 @@ streamlit run ui.py
 
 ---
 
-## 💻 Local Setup Instructions
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/your-username/local-rag-chatbot.git
-cd local-rag-chatbot
-
-# 2. Install dependencies
-pip install -r requirements.txt
-pip install "unstructured[pdf]" fpdf
-
-# 3. Start LLM with Ollama
-ollama run mistral
-
-# 4. Launch the chatbot UI
-streamlit run ui.py
